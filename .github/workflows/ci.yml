@@ -1,0 +1,24 @@
+name: Roda Testes
+on:
+  push
+jobs:
+  teste-completude:
+    name: Compila Testes CI
+    runs-on: ubuntu-latest
+    setps:
+    - name: Checkout
+      uses: actions/checkout@v04
+    - name: Adiciona Versão Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'corretto'
+        architeture: x64
+    - name: Cacheia Dependencias mvn
+      uses: action/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{runner.os}}-maven-${{ hashFiles('**/pom.xml')}}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+    -run: mvn --batch-mode teste
