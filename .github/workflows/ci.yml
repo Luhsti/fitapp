@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up JDK 17 for x64
+      - name: Instala JDK
         uses: actions/setup-java@v4
         with:
           java-version: '17'
