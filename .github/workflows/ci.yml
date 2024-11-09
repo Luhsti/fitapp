@@ -21,4 +21,5 @@ jobs:
           key: ${{runner.os}}-maven-${{ hashFiles('**/pom.xml')}}
           restore-keys: |
             ${{ runner.os }}-maven-
-    -run: mvn --batch-mode teste
+      - run: mvn --batch-mode teste
+
