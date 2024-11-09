@@ -5,7 +5,7 @@ jobs:
   teste-completude:
     name: Compila Testes CI
     runs-on: ubuntu-latest
-    setps:
+    steps:
     - name: Checkout
       uses: actions/checkout@v04
     - name: Adiciona Versão Java
