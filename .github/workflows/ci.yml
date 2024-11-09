@@ -2,8 +2,8 @@ name: Unit tests
 on:
   push
 jobs:
-  test-full:
-    name: Run CI Tests
+  teste-completude:
+    name: Inicia testes CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,7 +14,7 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
           architecture: x64
-      - name: Cache Maven dependencies
+      - name: Cacheia Dependencias
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
